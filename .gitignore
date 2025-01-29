@@ -132,3 +132,5 @@ dist
 dist/
 .vscode/
 .DS_Store
+/.idea/shelf/Changes/shelved.patch
+/.idea/shelf/Changes.xml
