@@ -1,5 +1,5 @@
 {
-  "name": "mis-react-lib",
+  "name": "@zaarour-org/mis-react-lib",
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "rollup -c",
     "prepare": "npm run build",
