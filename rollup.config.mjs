@@ -7,18 +7,18 @@ export default [
     {
         input: "src/index.ts",
         output: [
-            {
-                file: "dist/index.js",
-                format: "cjs",
-                sourcemap: true,
-            },
-            {
-                file: "dist/index.esm.js",
-                format: "esm",
-                sourcemap: true,
-            },
+            { file: "dist/index.js", format: "cjs", sourcemap: true },
+            { file: "dist/index.esm.js", format: "esm", sourcemap: true },
         ],
-        plugins: [resolve(), babel({ babelHelpers: "bundled" }), commonjs()],
+        plugins: [
+            resolve({ extensions: [".js", ".ts", ".tsx"] }), // ✅ Ensure Rollup processes .tsx
+            babel({
+                babelHelpers: "bundled",
+                extensions: [".ts", ".tsx"], // ✅ Ensure Babel handles TSX
+                presets: ["@babel/preset-react"], // ✅ Enable JSX transformation
+            }),
+            commonjs(),
+        ],
         external: ["react", "react-dom", "@mui/material", "@tanstack/react-query", "axios"],
     },
     {

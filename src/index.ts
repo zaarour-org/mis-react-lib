@@ -1,0 +1,1 @@
+export {default as TestCom} from "./components/TestCom";
